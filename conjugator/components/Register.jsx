@@ -15,7 +15,7 @@ const Reg = ({ errors, touched, values, status}) => {
 
     return (
         <div className='user-form'>
-            <h1>Sign Up</h1>
+            <h1>Sign Up!</h1>
             <Form>
                 <Field type="text" name="name" placeholder="Name" />
 
@@ -79,7 +79,7 @@ const Reg = ({ errors, touched, values, status}) => {
     handleSubmit(values, { setStatus }) {
 
     axios
-      .post('', values)
+      .post('https://sp-conjugator-be.herokuapp.com/api/auth/signup', values)
       .then(res => {
         setStatus(res.data);
       })
