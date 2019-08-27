@@ -52,9 +52,14 @@ const Login = props => {
 
   return (
     <>
-      <ConjugatorIo>Conjugator</ConjugatorIo>
-      <form onSubmit={handleSubmit}>
+      <div>
+        <ConjugatorIo>Conjugator</ConjugatorIo>
+      </div>
+      <div>
         <WelcomeBack>Welcome Back!</WelcomeBack>
+      </div>
+
+      <form onSubmit={handleSubmit}>
         <Email>Email</Email>
         <Rectangle
           type="text"
