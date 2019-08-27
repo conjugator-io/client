@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { Redirect } from "react-router-dom";
+import {
+  ConjugatorIo,
+  WelcomeBack,
+  Email,
+  Password,
+  Rectangle,
+  Button,
+  LetsGo,
+  Path1,
+  Path2,
+  Path3,
+  Path4
+} from "../styles/LoginPageStyles";
 
 const Login = props => {
   // Get the token from local storage.
@@ -38,24 +51,29 @@ const Login = props => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h4>Welcome Back!</h4>
-      <input
-        type="text"
-        name="email"
-        placeholder="email"
-        onChange={handleChange}
-        value={props.email}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="password"
-        onChange={handleChange}
-        value={props.password}
-      />
-      <button onSubmit={handleSubmit}>Login</button>
-    </form>
+    <>
+      <ConjugatorIo>Conjugator</ConjugatorIo>
+      <form onSubmit={handleSubmit}>
+        <WelcomeBack>Welcome Back!</WelcomeBack>
+        <Email>Email</Email>
+        <Rectangle
+          type="text"
+          name="email"
+          placeholder=""
+          onChange={handleChange}
+          value={props.email}
+        />
+        <Password>Password</Password>
+        <Rectangle
+          type="password"
+          name="password"
+          placeholder=""
+          onChange={handleChange}
+          value={props.password}
+        />
+        <Button onSubmit={handleSubmit}>Let's Go!</Button>
+      </form>
+    </>
   );
 };
 
