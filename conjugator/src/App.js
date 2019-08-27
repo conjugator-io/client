@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
+// import Login from './components/Login'
 // import { protectRoute } from './utils'
 // const ProtectedRoute = protectRoute(Component goes here)
 
 function App() {
   return (
     <div className="App">
-        App runs
+      {/* <Route to="/login" component={Login} /> ***Noor Still working on this*** */}
     </div>
   );
 }
