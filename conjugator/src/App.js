@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
-import FormikReg from 'react';
+import React from 'react';
 import './App.css';
-
-
+// import { protectRoute } from './utils'
+// const ProtectedRoute = protectRoute(Component goes here)
 
 function App() {
-  const [Register, Login] = useState([]);
   return (
-      <div className="App">
-        <Route exact path="/" component={Login} />
-      <Route path="/Register" component={Register}/>
-      </div>
+    <div className="App">
+        App runs
+    </div>
   );
 }
 
