@@ -31,3 +31,32 @@
     transform: rotate(360deg);
   }
 }
+
+/* Streak */
+
+.Circle1{
+  height: 38px;
+  width: 38px;
+  border: 1px solid #FCE781;
+  border-radius: 50%;
+  background-color: #0A4699;
+  display:inline-block;
+}
+
+.Circle2
+{height: 38px;
+  width: 38px;
+  border: 1px solid #FCE781;
+  border-radius: 50%;
+  background-color: #4890F3;
+  display:inline-block;}
+  
+
+.Circle3{
+  height: 38px;
+  width: 38px;
+  border: 1px solid #FCE781;
+  border-radius: 50%;
+  background-image: linear-gradient(#0A4699 50%, #4890F3 50%);
+  display:inline-block;
+}
