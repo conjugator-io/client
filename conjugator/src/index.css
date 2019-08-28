@@ -1,6 +1,6 @@
 body {
   font-family: Nunito;
-  background-color: #fff2b2;
-  margin: 0px;
+  background-color: #fff2b2 !important;
+  margin: 0 !important;
   height: 100vh;
 }

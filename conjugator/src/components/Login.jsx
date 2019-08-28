@@ -12,7 +12,8 @@ import {
   Path1,
   Path2,
   Path3,
-  Path4
+  Path4,
+  Form
 } from "../styles/LoginPageStyles";
 
 const Login = props => {
@@ -52,14 +53,15 @@ const Login = props => {
 
   return (
     <>
-      <div>
-        <ConjugatorIo>Conjugator</ConjugatorIo>
-      </div>
+      <Path1></Path1>
+      <ConjugatorIo>Conjugator</ConjugatorIo>
+      <Path2></Path2>
+
       <div>
         <WelcomeBack>Welcome Back!</WelcomeBack>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Email>Email</Email>
         <Rectangle
           type="text"
@@ -77,7 +79,9 @@ const Login = props => {
           value={props.password}
         />
         <Button onSubmit={handleSubmit}>Let's Go!</Button>
-      </form>
+      </Form>
+      <Path3></Path3>
+      <Path4></Path4>
     </>
   );
 };
