@@ -9,6 +9,7 @@ import Popover from 'react-bootstrap/Popover'
 import Row from 'react-bootstrap/Row'
 import axios from 'axios'
 import Loader from '../components/Loader'
+import Facebook from "../components/FacebookLogin"
 
 export default class Register extends React.Component{
   constructor(props) {
@@ -68,7 +69,7 @@ export default class Register extends React.Component{
 
             // Success
             this.setState({
-                signUpMessage: 'Thank You registered with us! Please login to Begin.',
+                signUpMessage: 'Thank You registering with us! Please login to Begin.',
                 isLoading: false
             });
 
@@ -120,24 +121,9 @@ export default class Register extends React.Component{
                     onSubmit={this.handleSubmit}
                 >
                     <Form.Row>
-                        <Form.Group as={Col} md="6" controlId="username">
-                            <Form.Label>Username</Form.Label>
-                            <InputGroup>
-                            <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                            </InputGroup.Prepend>
-                            <Form.Control
-                                type="text"
-                                placeholder="Username"
-                                aria-describedby="inputGroupPrepend"
-                                value={this.state.username} onChange={this.handleInput}
-                                required
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                Please choose a username.
-                            </Form.Control.Feedback>
-                            </InputGroup>
-                        </Form.Group>
+                       <Form.Group as={Col} md="6" controlId="FBLOGIN">
+                           <Facebook />
+                       </Form.Group>
                         <Form.Group as={Col} md="6" controlId="email">
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="email" placeholder="Email Address" value={this.state.email} onChange={this.handleInput} required />
