@@ -5,7 +5,8 @@ import Modal from 'react-bootstrap/Modal'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import axios from 'axios'
-import Loader from './components/Loader'
+import Loader from '../components/Loader'
+// import Facebook from '../components/FacebookLogin'
 
 export default class Login extends React.Component{
   constructor(props) {

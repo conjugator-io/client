@@ -1,0 +1,15 @@
+import Facebook from "../components/FacebookLogin"
+
+
+
+import React, { Component } from 'react'
+
+export default class HomePage extends Component {
+    render() {
+        return (
+            <div>
+                <Facebook />
+            </div>
+        )
+    }
+}

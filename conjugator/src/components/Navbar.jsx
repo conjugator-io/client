@@ -52,7 +52,7 @@ export default class NavHeader extends React.Component{
 
         return(
             <div>
-                <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
+                <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" fixed="top">
                     <Navbar.Brand href="/">
                     <img
                         alt="Conjugator logo"
