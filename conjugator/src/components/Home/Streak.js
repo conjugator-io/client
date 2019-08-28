@@ -11,6 +11,8 @@ const Div = styled.div`
     justify-content:space-between;
     height: 71px;
     width: 466px;
+    margin:auto;
+    margin-top:35px;
     `;
 
 const Day = styled.div`
@@ -31,7 +33,7 @@ const Text = styled.h2`
 export default function Streak(props){
 
 
-    const [streak, setStreak] = useState(1);
+    const [streak, setStreak] = useState(2);
 
     useEffect(() => {
 
