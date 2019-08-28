@@ -56,7 +56,8 @@ export default function Streak(props){
         //Week
         const date = new Date();
         const today = date.getDay();
-        var difference = today - 1 - streak;
+        const weekstreak = streak % 7;
+        var difference = today - 1 - weekstreak;
 
         if(difference < 0){
             difference = -1;
