@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       {/* < Challenge /> *** Michael Still working on this */}
-      {/* <Route to="/login" component={Login} /> ***Noor Still working on this*** */}
+      <Route to="/login" component={Login} />
     </div>
   );
 }
