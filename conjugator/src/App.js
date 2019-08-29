@@ -2,14 +2,17 @@ import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Login from './components/Login'
-import Home from "./components/Home/Home";
-// import { protectRoute } from './utils'
-// const ProtectedRoute = protectRoute(Component goes here)
+import { protectRoute } from './utils'
 import Challenge from './components/Challenge';
+import Home from './components/Home/Home'
+
+const ProtectedRoute = protectRoute(Home)
+
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={Home} />
+      <Route to='/' component={Login} />
+      <Route to='/home' component={ProtectedRoute} />
     </div>
   );
 }

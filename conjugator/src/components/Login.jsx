@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Top_left_wave_100_opacity from "../images/Top_left_wave_100_opacity.svg";
 import Top_left_save_75_opaque from "../images/Top_left_save_75_opaque.svg";
 import Bottom_right_corner_wave_75_opaque from "../images/Bottom_right_corner_wave_75_opaque.svg";
@@ -32,7 +32,7 @@ const Login = props => {
 
   if (token) {
     // If token existed we redirect the user to the home page.
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
 
   const handleChange = event => {
@@ -41,12 +41,13 @@ const Login = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    Axios.post("https://sp-conjugator-be.herokuapp.com/api/auth/login", creds)
+    axiosWithAuth()
+      .post("https://sp-conjugator-be.herokuapp.com/api/auth/login", creds)
       .then(res => {
         // Saving the token to local storage.
         localStorage.setItem("token", res.data.token);
         console.log("%c Token has been saved, re-routing...", "color: green;");
-        props.history.push("TO BE DECIDED");
+        props.history.push("/home");
       })
       .catch(error => {
         console.log(
