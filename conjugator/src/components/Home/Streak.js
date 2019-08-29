@@ -1,9 +1,8 @@
-import React, { useState, useEffect} from "react";
-import axios from 'axios';
+import React from "react";
 import styled from 'styled-components';
 
 
-//Styled 
+//Styled Components
 
 const Div = styled.div`
     display:flex;
@@ -32,34 +31,16 @@ const Text = styled.h2`
 
 export default function Streak(props){
 
+    const user = props.user;
+    console.log(user);
 
-    const [streak, setStreak] = useState(9);
-
-    useEffect(() => {
-
-        // const id =  props.match.params.id;
-
-        const getStreak = () => {
-        axios
-            // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
-            .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
-            .then(response => {
-            console.log(response.data)
-            setStreak(response.data.streak_days);
-            })
-            .catch(error => {
-            console.error('Server Error', error);
-            });
-        }
-        
-        getStreak();
-    }, []);
+    const streak = user.streak_days;
 
         //Week
         const date = new Date();
         const today = date.getDay();
         let weekstreak = streak;
-        if(streak > 7){
+        if(streak > today){
             weekstreak = today;
         }
         var difference = today - 1 - weekstreak;
