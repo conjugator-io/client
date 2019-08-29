@@ -9,7 +9,8 @@ import Challenge from './components/Challenge';
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={Home} />
+      <Route exact path='/' component={Login} />
+      <Route to='/' component={Home} />
     </div>
   );
 }

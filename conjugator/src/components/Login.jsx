@@ -32,7 +32,7 @@ const Login = props => {
 
   if (token) {
     // If token existed we redirect the user to the home page.
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
 
   const handleChange = event => {
