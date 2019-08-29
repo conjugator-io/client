@@ -62,6 +62,7 @@ const Image2 = styled.img`
     bottom:100px;
     `;
 
+
 export default function Home(props){
 
     const [user, setUser] = useState([]);
@@ -89,8 +90,7 @@ return(
         <Streak user={user}/>
         <MidBorder/>
         <MidText>This Week's Goal</MidText>
-            <GoalCircle user={user}/>
-            <img src={waves}/>
+        <GoalCircle user={user}/>
     </Dash>
 )
 }
