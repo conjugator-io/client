@@ -107,27 +107,5 @@ if(!sentence){ return null; }
         </Styler>
       );
     }
-  
-
-
-
-
-
-
-
-      
-    
-      
-    
-
-
-
-    
-
-
-
-
-
-
 
 export default Challenge; 
