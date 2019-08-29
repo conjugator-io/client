@@ -1,40 +1,20 @@
-import React, { useState, useEffect} from "react";
-import axios from 'axios';
+import React from "react";
 
 export default function GoalCircle(props){
 
-    const [goal, setGoal] = useState(3);
-    const [progress, setProgress] = useState(1);
-    const [streak, setStreak] = useState(9);
+    const user = props.user;
+    console.log(user);
 
-    // const id =  props.match.params.id;
-
-
-    useEffect(() => {
-
-        const getInfo = () => {
-        axios
-            // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
-            .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
-            .then(response => {
-            console.log(response.data)
-            setGoal(response.data.daily_goal);
-            setProgress(response.data.daily_progress);
-            setStreak(response.data.streak_days);
-            })
-            .catch(error => {
-            console.error('Server Error', error);
-            });
-        }
-        
-        getInfo();
-    }, []);
+    const goal = user.daily_goal;
+    const progress = user.daily_progress;
+    const streak = user.streak_days;
 
 
     //Variables
     if(progress > goal){
         progress = goal;
     };
+
     const weekly = goal * 7;
     const weekStreak = streak % 7;
     const done = weekStreak * goal + progress;

@@ -2,6 +2,8 @@ import React, { useState, useEffect} from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
+
 import Nav from './Nav';
 import ProgressBar from './ProgressBar';
 import ChallengeButton from './ChallengeButton';
@@ -62,40 +64,32 @@ const Image2 = styled.img`
 
 export default function Home(props){
 
-    const [name, setName] = useState('Joey');
-    const [streak, setStreak] = useState(9);
-    // const id =  props.match.params.id;
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
-
-        const getInfo = () => {
-        axios
-            // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
-            .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
+            axiosWithAuth()
+            
+            .get(`https://sp-conjugator-be.herokuapp.com/api/users/3`)
             .then(response => {
             console.log(response.data)
-            setName(response.data.name);
-            setStreak(response.data.streak_days);
+            setUser(response.data)
             })
             .catch(error => {
             console.error('Server Error', error);
             });
-        }
-        
-        getInfo();
     }, []);
 
 
 return(
     <Dash>
         <Nav/>
-        <Welcome>You're on a {streak} day streak! Keep up the good work {name}!</Welcome>
-        <ProgressBar/>
-        <ChallengeButton/>
-        <Streak/>
+        <Welcome>You're on a {user.streak_days} day streak! Keep up the good work {user.name}!</Welcome>
+        <ProgressBar user={user}/>
+        <ChallengeButton user={user}/>
+        <Streak user={user}/>
         <MidBorder/>
         <MidText>This Week's Goal</MidText>
-            <GoalCircle/>
+            <GoalCircle user={user}/>
             <img src={waves}/>
     </Dash>
 )
