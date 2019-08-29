@@ -33,7 +33,7 @@ const Text = styled.h2`
 export default function Streak(props){
 
 
-    const [streak, setStreak] = useState(2);
+    const [streak, setStreak] = useState(9);
 
     useEffect(() => {
 
@@ -58,7 +58,10 @@ export default function Streak(props){
         //Week
         const date = new Date();
         const today = date.getDay();
-        const weekstreak = streak % 7;
+        let weekstreak = streak;
+        if(streak > 7){
+            weekstreak = today;
+        }
         var difference = today - 1 - weekstreak;
 
         if(difference < 0){

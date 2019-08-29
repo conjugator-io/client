@@ -9,30 +9,13 @@ export default function ProgressBar(props){
     
     useEffect(() => {
 
-        const getGoal = () => {
+        const getInfo = () => {
         axios
             // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
             .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
             .then(response => {
             console.log(response.data)
             setGoal(response.data.daily_goal);
-            })
-            .catch(error => {
-            console.error('Server Error', error);
-            });
-        }
-        
-        getGoal();
-    }, []);
-
-    useEffect(() => {
-
-        const getProgress = () => {
-        axios
-            // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
-            .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
-            .then(response => {
-            console.log(response.data)
             setProgress(response.data.daily_progress);
             })
             .catch(error => {
@@ -40,7 +23,7 @@ export default function ProgressBar(props){
             });
         }
         
-        getProgress();
+        getInfo();
     }, []);
 
     //Bar Class Name Strings - bar[goal][progress]
