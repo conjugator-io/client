@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 
-//Styled 
+//Styled Components
 
 const Div = styled.div`
     display:flex;

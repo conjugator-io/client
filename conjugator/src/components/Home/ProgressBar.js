@@ -8,7 +8,7 @@ export default function ProgressBar(props){
     const goal = user.daily_goal;
     const progress = user.daily_progress;
 
-    //Bar Class Name Strings - bar[goal][progress]
+    //Bar Class Name Strings: bar[goal][progress]
 
     const string = 'bar';
     const bar = string.concat(goal).concat(progress);

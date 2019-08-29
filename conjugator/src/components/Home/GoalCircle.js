@@ -11,6 +11,7 @@ export default function GoalCircle(props){
 
 
     //Variables
+    
     if(progress > goal){
         progress = goal;
     };

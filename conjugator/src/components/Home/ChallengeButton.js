@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
-//Styled Components
+//Styled Components.
 
 const Btn = styled.button`
     display:flex;
