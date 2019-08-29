@@ -2,13 +2,13 @@ import React, { useState, useEffect} from "react";
 import axios from 'axios';
 import styled from 'styled-components';
 
-import Logo from '../Logo';
 import Nav from './Nav';
 import ProgressBar from './ProgressBar';
 import ChallengeButton from './ChallengeButton';
 import Streak from './Streak';
 import GoalCircle from './GoalCircle';
-import wave from './images/wave.svg'
+import wave from './images/wave.svg';
+import waves from './images/waves.svg'
 
 
 //Styled 
@@ -68,30 +68,13 @@ export default function Home(props){
 
     useEffect(() => {
 
-        const getName = () => {
+        const getInfo = () => {
         axios
             // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
             .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
             .then(response => {
             console.log(response.data)
             setName(response.data.name);
-            })
-            .catch(error => {
-            console.error('Server Error', error);
-            });
-        }
-        
-        getName();
-    }, []);
-
-    useEffect(() => {
-
-        const getStreak = () => {
-        axios
-            // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
-            .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
-            .then(response => {
-            console.log(response.data)
             setStreak(response.data.streak_days);
             })
             .catch(error => {
@@ -99,7 +82,7 @@ export default function Home(props){
             });
         }
         
-        getStreak();
+        getInfo();
     }, []);
 
 
@@ -113,8 +96,7 @@ return(
         <MidBorder/>
         <MidText>This Week's Goal</MidText>
             <GoalCircle/>
-            <Image1 src={wave}/>
-            <Image2 src={wave}/>
+            <img src={waves}/>
     </Dash>
 )
 }
