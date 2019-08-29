@@ -1,6 +1,6 @@
-import React, { useState, useEffect} from "react";
-import axios from 'axios';
+import React from "react";
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 //Styled Components
 
@@ -18,32 +18,19 @@ const Btn = styled.button`
 
 export default function ChallengeButton(props){
 
-    const [progress, setProgress] = useState(2);
+    const user = props.user;
+    console.log(user);
+
+    const progress = user.daily_progress;
     let text = 'Continue';
-
-    useEffect(() => {
-
-        const getProgress = () => {
-        axios
-            // .get(`https://sp-conjugator-be.herokuapp.com/api/${id}`)
-            .get(`https://sp-conjugator-be.herokuapp.com/api/1`)
-            .then(response => {
-            console.log(response.data)
-            setProgress(response.data.daily_progress);
-            })
-            .catch(error => {
-            console.error('Server Error', error);
-            });
-        }
-        
-        getProgress();
-    }, []);
 
     if(progress == 0){
         text = "Start Today's Challenge"
     }
 
     return(
-        <Btn>{text}</Btn>
+        <Link to='/challenge'>
+            <Btn>{text}</Btn>
+        </Link>
     )
 }
