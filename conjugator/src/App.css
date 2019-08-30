@@ -32,22 +32,39 @@
   display:inline-block;
 }
 
+.kkSXEQ {
+  width:100% !important;
+  max-width: fit-content;
+}
 /* Home Nav Styles */
 
 .NavBar{
   display:flex;
   justify-content: space-between;
   border-bottom: 2px solid #979797;
-  height:78px;
+  height:auto;
   align-items:center;
+  width:90% !important;
+  margin:auto;
+}
+
+@media only screen and (max-width: 800px){
+  .NavBar{
+    display:flex;
+    flex-direction: column;
   }
+
+  .NavBar .bdSHXH {
+    margin-bottom: 10px;
+  } 
+}
 
 .leftNav{
 display:flex !important;
 flex-direction: row;
 justify-content: space-between;
 margin-right:34px;
-width:534px;
+max-width:534px;
 }
 
 .navText{
@@ -363,4 +380,8 @@ font-family: Nunito;
 font-size: 18px;
 line-height: 24px;
 margin:auto;
+}
+
+body{
+  background-color:#0A4699;
 }

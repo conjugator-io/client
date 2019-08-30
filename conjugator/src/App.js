@@ -10,10 +10,12 @@ const ProtectedRoute = protectRoute(Home)
 
 function App() {
   return (
-    <div className="App">
-      <Route to='/' component={Login} />
-      <Route to='/home' component={ProtectedRoute} />
+      <div className="App">
+      <Route exact path='/' component={Login} />
+      <Route path='/home' component={ProtectedRoute} />
+      <Route path= '/challenge' component={Challenge} />
     </div>
+
   );
 }
 

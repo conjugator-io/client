@@ -15,13 +15,15 @@ import waves from './images/waves.svg'
 //Styled 
 const Dash = styled.div`
     background-color:#0A4699;
-    width:1024px;
     margin:auto;
+    width:100%;
+    max-width:1024px;
     `;
 
 const Welcome = styled.h2`
     height: 34px;
-    width: 607px;
+    max-width: 607px;
+    width:100%;
     color: #FCE781;
     font-family: Nunito;
     font-size: 25px;
@@ -33,13 +35,15 @@ const Welcome = styled.h2`
 const MidBorder = styled.span`
     display:flex;
     height:35px;
-    width:502px;
+    max-width:502px;
+    width:100%;
     border-bottom: 1px solid #FCE781;
     margin:auto;
     `;
 
 const MidText = styled.p`
-    width:fit-content;
+    max-width:fit-content;
+    width:100%
     color: #FCE781;
     font-family: Nunito;
     font-size: 14px;
@@ -53,12 +57,15 @@ const Image1 = styled.img`
     opacity: .75;
     position:relative;
     height:190px;
-    width:1024px;
+    max-width:1024px;
+    width:100%;
     `;
 
 const Image2 = styled.img`
     position:relative;
     bottom:100px;
+    max-width:1024px;
+    width:100%;
     `;
 
 
