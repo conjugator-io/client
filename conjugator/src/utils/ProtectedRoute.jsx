@@ -6,7 +6,7 @@ const protectRoute = Component => props => {
   if (token) {
     return <Component {...props} />;
   } else {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
 };
 
