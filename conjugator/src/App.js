@@ -11,8 +11,9 @@ const ProtectedRoute = protectRoute(Home)
 function App() {
   return (
     <div className="App">
-      <Route to='/' component={Login} />
-      <Route to='/home' component={ProtectedRoute} />
+      <Route exact path='/' component={Login} />
+      <Route path="/challenge" render={(props) => <Challenge {...props} />} />
+      <Route path='/home' component={ProtectedRoute} />
     </div>
   );
 }
