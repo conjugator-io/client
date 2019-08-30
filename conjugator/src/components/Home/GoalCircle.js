@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function GoalCircle(props){
+export default function GoalCircle(props) {
 
     const user = props.user;
-    console.log(user);
+    // console.log(user);
 
     const goal = user.daily_goal;
     const progress = user.daily_progress;
@@ -11,8 +11,8 @@ export default function GoalCircle(props){
 
 
     //Variables
-    
-    if(progress > goal){
+
+    if (progress > goal) {
         progress = goal;
     };
 
@@ -20,9 +20,9 @@ export default function GoalCircle(props){
     const weekStreak = streak % 7;
     const done = weekStreak * goal + progress;
 
-    const rawDec = done/weekly;
-    const percent = Math.round(rawDec *100);
-    const percentile = Math.round(rawDec*10) * 10;
+    const rawDec = done / weekly;
+    const percent = Math.round(rawDec * 100);
+    const percentile = Math.round(rawDec * 10) * 10;
 
     const string1 = 'GoalCircle';
     const string2 = percentile.toString();
@@ -38,7 +38,7 @@ export default function GoalCircle(props){
                 percent:${percent},
                 percentile:${percentile}`);
 
-    return(
+    return (
         <span className={string3}>
             {percent}% of goal
         </span>

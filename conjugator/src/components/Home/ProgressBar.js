@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function ProgressBar(props){
-    
+export default function ProgressBar(props) {
+
     const user = props.user;
-    console.log(user);
+    // console.log(user);
 
     const goal = user.daily_goal;
     const progress = user.daily_progress;
@@ -12,13 +12,13 @@ export default function ProgressBar(props){
 
     const string = 'bar';
     const bar = string.concat(goal).concat(progress);
-    console.log(bar);
+    // console.log(bar);
 
 
-    return(
-        <div className ='Prog'>
+    return (
+        <div className='Prog'>
             <h2 className='progText'>Challenge Progress</h2>
-            <span className={bar}/>
+            <span className={bar} />
         </div>
     )
 }
