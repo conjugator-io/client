@@ -37,22 +37,39 @@ body {
   display: inline-block;
 }
 
+.kkSXEQ {
+  width:100% !important;
+  max-width: fit-content;
+}
 /* Home Nav Styles */
 
 .NavBar {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #979797;
-  height: 78px;
-  align-items: center;
+  height:auto;
+  align-items:center;
+  width:90% !important;
+  margin:auto;
 }
 
-.leftNav {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 34px;
-  width: 534px;
+@media only screen and (max-width: 800px){
+  .NavBar{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .NavBar .bdSHXH {
+    margin-bottom: 10px;
+  } 
+}
+
+.leftNav{
+display:flex !important;
+flex-direction: row;
+justify-content: space-between;
+margin-right:34px;
+max-width:534px;
 }
 
 .navText {
@@ -224,194 +241,198 @@ body {
 
 /* Goal Circle */
 
-.GoalCircle0 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  background-color: #0a4699;
-  justify-content: center;
-  align-items: center;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  margin: auto;
+.GoalCircle0{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+background-color: #0A4699;
+justify-content:center;
+align-items: center;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+margin:auto;
 }
 
-.GoalCircle10 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: center;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 90%, #4890f3 10%);
-  margin: auto;
+.GoalCircle10{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: center;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 90%, #4890F3 10%);
+margin:auto;
 }
 
-.GoalCircle20 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: center;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 80%, #4890f3 20%);
-  margin: auto;
+.GoalCircle20{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: center;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 80%, #4890F3 20%);
+margin:auto;
 }
 
-.GoalCircle30 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 45px;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 70%, #4890f3 30%);
-  margin: auto;
+.GoalCircle30{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: flex-end;
+padding-bottom:45px;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 70%, #4890F3 30%);
+margin:auto;
 }
 
-.GoalCircle40 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 30px;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 60%, #4890f3 40%);
-  margin: auto;
+.GoalCircle40{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: flex-end;
+padding-bottom:30px;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 60%, #4890F3 40%);
+margin:auto;
 }
 
-.GoalCircle50 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 40px;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 50%, #4890f3 50%);
-  margin: auto;
+.GoalCircle50{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: flex-end;
+padding-bottom:40px;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 50%, #4890F3 50%);
+margin:auto;
 }
 
-.GoalCircle60 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: center;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 40%, #4890f3 40%);
-  margin: auto;
+.GoalCircle60{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: center;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 40%, #4890F3 40%);
+margin:auto;
 }
 
-.GoalCircle70 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: center;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 30%, #4890f3 30%);
-  margin: auto;
+.GoalCircle70{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: center;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 30%, #4890F3 30%);
+margin:auto;
 }
 
-.GoalCircle80 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30px;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 20%, #4890f3 20%);
-  margin: auto;
+.GoalCircle80{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: center;
+padding-bottom:30px;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 20%, #4890F3 20%);
+margin:auto;
 }
 
-.GoalCircle90 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 50px;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  background-image: linear-gradient(#0a4699 10%, #4890f3 10%);
-  margin: auto;
+.GoalCircle90{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+justify-content:center;
+align-items: center;
+padding-bottom:50px;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+background-image: linear-gradient(#0A4699 10%, #4890F3 10%);
+margin:auto;
 }
 
-.GoalCircle100 {
-  box-sizing: border-box;
-  display: flex;
-  height: 160px;
-  width: 160px;
-  border: 5px solid #fce781;
-  border-radius: 80px;
-  background-color: #4890f3;
-  justify-content: center;
-  align-items: center;
-  color: #fce781;
-  font-family: Nunito;
-  font-size: 18px;
-  line-height: 24px;
-  margin: auto;
+.GoalCircle100{
+box-sizing: border-box;
+display:flex;
+height: 160px;
+width: 160px;
+border: 5px solid #FCE781;
+border-radius: 80px;
+background-color: #4890F3;
+justify-content:center;
+align-items: center;
+color: #FCE781;
+font-family: Nunito;
+font-size: 18px;
+line-height: 24px;
+margin:auto;
+}
+
+body{
+  background-color:#0A4699;
 }
