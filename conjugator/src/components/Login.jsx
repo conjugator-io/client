@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import Top_left_wave_100_opacity from "../images/Top_left_wave_100_opacity.svg";
+import Top_left_save_75_opaque from "../images/Top_left_save_75_opaque.svg";
+import Bottom_right_corner_wave_75_opaque from "../images/Bottom_right_corner_wave_75_opaque.svg";
+import Bottom_right_wave_100_opacity from "../images/Bottom_right_wave_100_opacity.svg";
+import alligator_3312851_960_720 from "../images/alligator_3312851_960_720.svg";
 import { Redirect } from "react-router-dom";
 import {
   ConjugatorIo,
@@ -8,11 +13,13 @@ import {
   Password,
   Rectangle,
   Button,
-  LetsGo,
-  Path1,
-  Path2,
-  Path3,
-  Path4
+  Form,
+  TopDiv,
+  BottomDiv,
+  WelcomeBackDiv,
+  TopLeft,
+  BottomRight,
+  Aligator
 } from "../styles/LoginPageStyles";
 
 const Login = props => {
@@ -25,7 +32,7 @@ const Login = props => {
 
   if (token) {
     // If token existed we redirect the user to the home page.
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
 
   const handleChange = event => {
@@ -34,12 +41,13 @@ const Login = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    Axios.post("https://sp-conjugator-be.herokuapp.com/api/auth/login", creds)
+    axiosWithAuth()
+      .post("https://sp-conjugator-be.herokuapp.com/api/auth/login", creds)
       .then(res => {
         // Saving the token to local storage.
         localStorage.setItem("token", res.data.token);
         console.log("%c Token has been saved, re-routing...", "color: green;");
-        props.history.push("TO BE DECIDED");
+        props.history.push("/home");
       })
       .catch(error => {
         console.log(
@@ -52,14 +60,24 @@ const Login = props => {
 
   return (
     <>
-      <ConjugatorIo>Conjugator</ConjugatorIo>
-      <form onSubmit={handleSubmit}>
+      <TopDiv>
+        <img src={Top_left_wave_100_opacity} alt="" />
+        <ConjugatorIo>Conjugator</ConjugatorIo>
+        <Aligator src={alligator_3312851_960_720} alt="Aligator" />
+        <TopLeft src={Top_left_save_75_opaque}></TopLeft>
+      </TopDiv>
+      {/* <h1>Cong</h1> */}
+
+      <WelcomeBackDiv>
         <WelcomeBack>Welcome Back!</WelcomeBack>
+      </WelcomeBackDiv>
+      <Form onSubmit={handleSubmit}>
         <Email>Email</Email>
         <Rectangle
           type="text"
           name="email"
           placeholder=""
+          autoComplete="off"
           onChange={handleChange}
           value={props.email}
         />
@@ -68,11 +86,16 @@ const Login = props => {
           type="password"
           name="password"
           placeholder=""
+          autoComplete="off"
           onChange={handleChange}
           value={props.password}
         />
         <Button onSubmit={handleSubmit}>Let's Go!</Button>
-      </form>
+      </Form>
+      <BottomDiv>
+        <BottomRight src={Bottom_right_corner_wave_75_opaque}></BottomRight>
+        <img src={Bottom_right_wave_100_opacity} alt="" />
+      </BottomDiv>
     </>
   );
 };
