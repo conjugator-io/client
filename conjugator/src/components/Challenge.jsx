@@ -57,6 +57,7 @@ const Challenge = props => {
   const [inputValue, setInputValue] = useState("");
   const [counter, setCounter] = useState(0);
   const [error, setError] = useState("");
+  const [verb, setVerb] = useState(""); 
 
   useEffect(() => {
     if (!data) {
@@ -68,6 +69,7 @@ const Challenge = props => {
           setChallenge(response.data[0].sentence);
           setData(response.data);
           setSentence(response.data[0].sentence);
+          setVerb(response.data[0].verb); 
         })
         .catch(error => {
           console.error(error);
@@ -76,6 +78,7 @@ const Challenge = props => {
 
     if (data) {
       setSentence(data[counter].sentence);
+      setVerb(data[counter].verb); 
     }
   }, [counter]);
   const clickButton = e => {
@@ -104,8 +107,11 @@ const Challenge = props => {
       <Logo />
       <MiddleDiv>
         <StylerP>
-          <p>{sentence}</p>
+          <p>{sentence}<br></br>Verb: {verb}</p> 
+          
         </StylerP>
+        <br></br>
+        <br></br>
         <Input
           type="text"
           name="conjugation"
