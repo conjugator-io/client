@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: #fff2b2;
+  height: -webkit-fill-available;
 }
 
 body {
