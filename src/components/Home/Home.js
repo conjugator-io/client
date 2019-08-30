@@ -15,6 +15,7 @@ import waves from './images/waves.svg'
 //Styled 
 const Dash = styled.div`
     background-color:#0A4699;
+    width: 100%;
     `;
 
 const Welcome = styled.h2`
@@ -43,8 +44,9 @@ const MidText = styled.p`
     font-size: 14px;
     line-height: 19px;
     margin-top:18px;
-    margin-left:258px;
     margin-bottom:0;
+    margin-left: auto;
+    margin-right: auto;
     `;
 
 const Image1 = styled.img`
