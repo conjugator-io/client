@@ -29,48 +29,48 @@ const Text = styled.h2`
     `;
 
 
-export default function Streak(props){
+export default function Streak(props) {
 
     const user = props.user;
-    console.log(user);
+    // console.log(user);
 
     const streak = user.streak_days;
 
-        //Week
-        const date = new Date();
-        const today = date.getDay();
-        let weekstreak = streak;
-        if(streak > today){
-            weekstreak = today;
-        }
-        var difference = today - 1 - weekstreak;
+    //Week
+    const date = new Date();
+    const today = date.getDay();
+    let weekstreak = streak;
+    if (streak > today) {
+        weekstreak = today;
+    }
+    var difference = today - 1 - weekstreak;
 
-        if(difference < 0){
-            difference = -1;
-        }
-        const week = [
-            {name:'Sun', circle:'Circle1'},
-            {name:'Mon', circle:'Circle1'},
-            {name:'Tue', circle:'Circle1'},
-            {name:'Wed', circle:'Circle1'},
-            {name:'Thu', circle:'Circle1'},
-            {name:'Fri', circle:'Circle1'},
-            {name:'Sat', circle:'Circle1'}
-        ]
+    if (difference < 0) {
+        difference = -1;
+    }
+    const week = [
+        { name: 'Sun', circle: 'Circle1' },
+        { name: 'Mon', circle: 'Circle1' },
+        { name: 'Tue', circle: 'Circle1' },
+        { name: 'Wed', circle: 'Circle1' },
+        { name: 'Thu', circle: 'Circle1' },
+        { name: 'Fri', circle: 'Circle1' },
+        { name: 'Sat', circle: 'Circle1' }
+    ]
 
-        for(let i=today-1; i>difference; i--){
-    
-            week[i].circle = 'Circle2';
-        }
+    for (let i = today - 1; i > difference; i--) {
 
-        week[today].circle = 'Circle3';
+        week[i].circle = 'Circle2';
+    }
 
-    return(
+    week[today].circle = 'Circle3';
+
+    return (
         <Div>
-            {week.map( day => (
-               <Day>
-                <span className={day.circle}/>
-                <Text>{day.name}</Text> 
+            {week.map(day => (
+                <Day>
+                    <span className={day.circle} />
+                    <Text>{day.name}</Text>
                 </Day>
             ))}
         </Div>

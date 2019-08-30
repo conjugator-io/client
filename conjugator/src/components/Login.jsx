@@ -5,7 +5,7 @@ import Top_left_save_75_opaque from "../images/Top_left_save_75_opaque.svg";
 import Bottom_right_corner_wave_75_opaque from "../images/Bottom_right_corner_wave_75_opaque.svg";
 import Bottom_right_wave_100_opacity from "../images/Bottom_right_wave_100_opacity.svg";
 import alligator_3312851_960_720 from "../images/alligator_3312851_960_720.svg";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import {
   ConjugatorIo,
   WelcomeBack,
@@ -19,7 +19,8 @@ import {
   WelcomeBackDiv,
   TopLeft,
   BottomRight,
-  Aligator
+  Aligator,
+  SignUp
 } from "../styles/LoginPageStyles";
 
 const Login = props => {
@@ -91,6 +92,9 @@ const Login = props => {
           value={props.password}
         />
         <Button onSubmit={handleSubmit}>Let's Go!</Button>
+        <SignUp>
+          <Link to="/signup">Don't have an account yet? Sign up</Link>
+        </SignUp>
       </Form>
       <BottomDiv>
         <BottomRight src={Bottom_right_corner_wave_75_opaque}></BottomRight>

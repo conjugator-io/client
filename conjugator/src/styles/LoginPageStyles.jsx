@@ -97,7 +97,8 @@ const BottomDiv = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  margin-top: 210px;
+  // margin-top: 210px;
+  margin-top: 227px;
 `;
 
 const WelcomeBackDiv = styled.div`
@@ -119,6 +120,16 @@ const Aligator = styled.img`
   z-index: 1;
   margin-top: 15px;
 `;
+
+const SignUp = styled.a`
+  height: 19px;
+  width: 220px;
+  color: #131415;
+  font-family: Nunito;
+  font-size: 14px;
+  line-height: 19px;
+`;
+
 export {
   ConjugatorIo,
   WelcomeBack,
@@ -133,5 +144,6 @@ export {
   WelcomeBackDiv,
   TopLeft,
   BottomRight,
-  Aligator
+  Aligator,
+  SignUp
 };

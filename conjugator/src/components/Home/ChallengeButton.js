@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
+import Challenge from '../Challenge'
 
 //Styled Components
 
@@ -16,19 +17,19 @@ const Btn = styled.button`
     margin-top:36px;
     `;
 
-export default function ChallengeButton(props){
+export default function ChallengeButton(props) {
 
     const user = props.user;
-    console.log(user);
+    // console.log(user);
 
     const progress = user.daily_progress;
     let text = 'Continue';
 
-    if(progress == 0){
+    if (progress == 0) {
         text = "Start Today's Challenge"
     }
 
-    return(
+    return (
         <Link to='/challenge'>
             <Btn>{text}</Btn>
         </Link>

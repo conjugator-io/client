@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
@@ -15,9 +15,8 @@ import waves from './images/waves.svg'
 //Styled 
 const Dash = styled.div`
     background-color:#0A4699;
-    margin:auto;
+//     margin:auto;
     width:100%;
-    max-width:1024px;
     `;
 
 const Welcome = styled.h2`
@@ -49,8 +48,9 @@ const MidText = styled.p`
     font-size: 14px;
     line-height: 19px;
     margin-top:18px;
-    margin-left:258px;
     margin-bottom:0;
+    margin-left: auto;
+    margin-right: auto;
     `;
 
 const Image1 = styled.img`
@@ -69,35 +69,35 @@ const Image2 = styled.img`
     `;
 
 
-export default function Home(props){
+export default function Home(props) {
 
     const [user, setUser] = useState([]);
 
     useEffect(() => {
-            axiosWithAuth()
-            
+        axiosWithAuth()
+
             .get(`https://sp-conjugator-be.herokuapp.com/api/users/3`)
             .then(response => {
-            console.log(response.data)
-            setUser(response.data)
+                console.log(response.data)
+                setUser(response.data)
             })
             .catch(error => {
-            console.error('Server Error', error);
+                console.error('Server Error', error);
             });
     }, []);
 
 
-return(
-    <Dash>
-        <Nav/>
-        <Welcome>You're on a {user.streak_days} day streak! Keep up the good work {user.name}!</Welcome>
-        <ProgressBar user={user}/>
-        <ChallengeButton user={user}/>
-        <Streak user={user}/>
-        <MidBorder/>
-        <MidText>This Week's Goal</MidText>
-        <GoalCircle user={user}/>
-        <img src={waves}/>
-    </Dash>
-)
+    return (
+        <Dash>
+            <Nav />
+            <Welcome>You're on a {user.streak_days} day streak! Keep up the good work {user.name}!</Welcome>
+            <ProgressBar user={user} />
+            <ChallengeButton user={user} />
+            <Streak user={user} />
+            <MidBorder />
+            <MidText>This Week's Goal</MidText>
+            <GoalCircle user={user} />
+            <img src={waves} />
+        </Dash>
+    )
 }
