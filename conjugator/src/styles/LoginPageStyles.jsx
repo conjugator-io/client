@@ -98,7 +98,7 @@ const BottomDiv = styled.div`
   align-items: flex-end;
   justify-content: flex-end;
   // margin-top: 210px;
-  margin-top: 227px;
+  margin-top: 207px;
 `;
 
 const WelcomeBackDiv = styled.div`
