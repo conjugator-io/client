@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Form, Field, withFormik } from "formik";
+import { withFormik } from "formik";
 import * as Yup from "yup";
+import styled from "styled-components";
 import Top_left_wave_100_opacity from "../images/Top_left_wave_100_opacity.svg";
 import Top_left_save_75_opaque from "../images/Top_left_save_75_opaque.svg";
 import Bottom_right_corner_wave_75_opaque from "../images/Bottom_right_corner_wave_75_opaque.svg";
@@ -14,7 +15,7 @@ import {
   Password,
   Rectangle,
   Button,
-  form,
+  Form,
   TopDiv,
   BottomDiv,
   WelcomeBackDiv,
@@ -24,8 +25,19 @@ import {
   // SignUp
 } from "../styles/LoginPageStyles";
 
+const Field = styled.input`
+  // *HTML Class* .rectangle
+
+  height: 40px;
+  width: 360px;
+  background-color: #ffffff;
+  border: none;
+  font-size: larger;
+  padding-left: 5px;
+`;
+
 const SignUp = ({ errors, touched, values, status }) => {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     if (status) {
@@ -43,17 +55,22 @@ const SignUp = ({ errors, touched, values, status }) => {
       </TopDiv>
       <h1>Sign Up</h1>
       <Form>
-        <Field type="text" name="name" placeholder="Name" />
-        {touched.name && errors.name && <p className="error">{errors.name}</p>}
-        <Field type="text" name="email" placeholder="Email" />
+        <Email>Email</Email>
+        <Field type="text" name="email" placeholder="" />
         {touched.email && errors.email && (
           <p className="error">{errors.email}</p>
         )}
-        <Field type="password" name="password" placeholder="Password" />
+        <Password>Password</Password>
+        <Field type="password" name="password" placeholder="" />
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <button>Submit!</button>
+        <Password>Confirm Password</Password>
+        <Field type="password" name="password" placeholder="" />
+        {touched.password && errors.password && (
+          <p className="error">{errors.password}</p>
+        )}
+        <Button type="submit">Submit!</Button>
       </Form>
       <BottomDiv>
         <BottomRight src={Bottom_right_corner_wave_75_opaque}></BottomRight>
@@ -73,8 +90,12 @@ const FormikSignUp = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    name: Yup.string().required("Please Enter A Name"),
-    email: Yup.string().required("Please Enter A Valid Email Address"),
+    name: Yup.string()
+      .min(4)
+      .required("Please Enter A Name"),
+    email: Yup.string()
+      .min(5)
+      .required("Please Enter A Valid Email Address"),
     password: Yup.string()
       .min(6)
       .required("Password Must be at least 6 Characters")
